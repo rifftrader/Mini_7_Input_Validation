@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Input Form Validation with Vue.js</title>
+
+    <!--      Add Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--    Local CSS-->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<div id="app">
+
+    <div class="container-fluid">
+
+        <form class="col-lg-4" autocomplete="chrome-off">
+
+            <h1>Vue Input Form Validation</h1>
+            <br>
+
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text"
+                       class="form-control"
+                       id="fname" placeholder="Enter first name" autocomplete="none"
+                       v-model="firstName"
+                       v-on:input="firstNameAnalysis()">
+                <p><small id="fname-help" class="form-text text-muted">{{ firstNameFeedback }}</small></p>
+            </div>
+
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input type="text" class="form-control" id="surname" placeholder="Enter surname" autocomplete="none"
+                       v-model="surname"
+                       v-on:input="surnameAnalysis()">
+                <p><small id="surname-help" class="form-text text-muted">{{ surnameFeedback }}</small></p>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                       placeholder="Enter email" autocomplete="none"
+                       v-model="enterEmail"
+                       v-on:input="emailAnalysis()">
+                <p><small id="email-help" class="form-text text-muted">{{ enterEmailFeedback }}</small></p>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-email">Confirm Email Address</label>
+                <input type="email" class="form-control" id="confirm-email" aria-describedby="emailHelp"
+                       placeholder="Confirm Email"
+                       v-model="confirmEmail"
+                       v-on:input="compareEmail()">
+                <p><small id="confirm-email-help" class="form-text text-muted">{{ confirmEmailFeedback }}</small></p>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" aria-describedby="password"
+                       placeholder="Enter password"
+                       v-model="enterPassword"
+                       v-on:input="passwordAnalysis()">
+                <p><small id="password-help" class="form-text text-muted">{{ enterPasswordFeedback }}</small></p>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm password</label>
+                <input type="password" class="form-control" id="confirm-password" aria-describedby="confirm-password"
+                       placeholder="Confirm password"
+                       v-model="confirmPassword"
+                       v-on:input="comparePassword()">
+                <p><small id="password-confirm-help" class="form-text text-muted">{{ confirmPasswordFeedback }}</small>
+                </p>
+            </div>
+
+            <div class="form-group">
+                <label for="gripe">Type your gripe here:</label>
+                <textarea class="form-control" id="gripe" rows="10"
+                          v-model="complaint"></textarea>
+                <p><small id="gripe-help" class="form-text text-muted">{{ complaintFeedback }}</small></p>
+            </div>
+            <br>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <br>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!--Vue.js CDN script-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!--Local JS script-->
+<script type="text/javascript" src="app.js"></script>
+
+<!--Bootstrap Scripts-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

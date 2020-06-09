@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+    background-color: lightgray;
+}
+
+p {
+    /*height: 40px;*/
+}
+
+
+.col {
+    text-align: right;
+}
+
+.container-fluid {
+
+    background-color: lightgray;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.checkbox {
+    text-align: left;
+}
+
